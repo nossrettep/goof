@@ -1,4 +1,5 @@
 # Node.js
+
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
@@ -24,6 +25,6 @@ steps:
     serviceConnectionEndpoint: 'snyk'
     testType: 'app'
     monitorOnBuild: true
-    failOnIssues: true
-    projectName: 'goof'
+    failOnIssues: false
+    projectName: 'Azure_pipeline'
     organization: 'a71ed153-c697-41e1-9770-e4dca670afca'
