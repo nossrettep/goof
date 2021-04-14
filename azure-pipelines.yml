@@ -6,7 +6,14 @@
 
 trigger:
 - master
-
+- task: SnykSecurityScan@0
+  inputs:
+    serviceConnectionEndpoint: 'snyk'
+    testType: 'app'
+    monitorOnBuild: true
+    failOnIssues: false
+    projectName: 'Azure_pipeline'
+    organization: 'a71ed153-c697-41e1-9770-e4dca670afca'
 pool:
   vmImage: ubuntu-latest
 
@@ -20,11 +27,3 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
-- task: SnykSecurityScan@0
-  inputs:
-    serviceConnectionEndpoint: 'snyk'
-    testType: 'app'
-    monitorOnBuild: true
-    failOnIssues: false
-    projectName: 'Azure_pipeline'
-    organization: 'a71ed153-c697-41e1-9770-e4dca670afca'
